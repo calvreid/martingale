@@ -5,7 +5,7 @@ potSize = 1000
 # Win percent
 p = .5
 
-iter = 1
+iterations = 1
 
 potHistory = c(potSize, rep(NA, 999))
 
@@ -31,7 +31,7 @@ while(potHistory[iter] > 0 && iter < 100000) {
   } else {
     potHistory[iter] = potHistory[(iter-1)] - betSize
     
-    # Double down!!!
+    # Double is the basis for our standard martingale
     betSize = betSize * 2
   }
 }
